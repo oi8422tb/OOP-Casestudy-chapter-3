@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Casestudy_chapter_3
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            double entry_fees = 25, this_year, prevyear, revenue, difference;
+
+
+            //Console.WriteLine("A user for the number of contestants entered in last year’s competition");
+
+            //prevyear = Double.Parse(Console.ReadLine());
+            prevyear = Convert.ToInt32(textBox1.Text);
+            //textBox2.Text = prevyear;
+            //Console.WriteLine("A user for the number of contestants entered in this competition");
+
+            //this_year = Double.Parse(Console.ReadLine());
+            this_year = Convert.ToInt32(textBox2.Text);
+            revenue = this_year * entry_fees;
+
+
+            difference = prevyear - this_year;
+            label1.Text = ("Revenue expected for this year’s competition :" + revenue);
+
+            if (difference < 0)
+                label1.Text = ("this year’s competition has more contestants than last year’s.");
+            else
+                Console.WriteLine("this year’s competition has Less contestants than last year’s.");
+
+
+        }
+    }
+}
